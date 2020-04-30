@@ -1,5 +1,5 @@
 //
-//  main.swift
+//  Bow.swift
 //  Swift_Arena
 //
 //  Created by Martin Flament on 29/04/2020.
@@ -8,4 +8,11 @@
 
 import Foundation
 
-startGames()
+public class Bow: Weapons {
+    
+    override init(name: String, hit: Int) {
+    
+        super.init(name: "Arc", hit: 50)
+    }
+
+}
