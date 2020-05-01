@@ -19,18 +19,28 @@ public class Player {
     }
     
     
+    // Je test la clef self.name = readLine()
     public func namePlayerOne() {
         print("Comment s'appelle le Joueur 1 ?")
         if let userName = readLine() {
-            playerOne.name = userName
+            self.name = userName
         }
-        print("Bienvenue \(playerOne.name)")
+        print("Bienvenue \(playerOne.name) !")
+    }
+    
+    
+    public func namePlayerTwo() {
+        print("Comment s'appelle le Joueur 2 ?")
+        if let userName = readLine() {
+            playerTwo.name = userName
+        }
+        print("Bienvenue \(playerTwo.name) !")
     }
     
     public func addWarToTeam() {
         let war = War(name: "Guerrier", weapon: Sword(name: "Epe", hit: 10), life:
             150)
-       self.team.append(war)
+        self.team.append(war) // <- c'est peut être la clef
         print("Vous avez ajouté un \(war.name) à votre équipe !"
             + "\n \(war.weapon.name)"
             + "\n \(war.weapon.hit)")
@@ -54,11 +64,35 @@ public class Player {
             + "\n \(archery.weapon.hit)")
     }
     
+    func nameWar() {
+        print("Choisissez un nom pour le guerrier")
+        if let userClasseNameChoice = readLine() {
+            playerOne.team[0].name = userClasseNameChoice
+            print("Votre guerrier s'appelle : \(playerOne.team[0].name)")
+        }
+    }
+    
+    func nameWizard() {
+        print("Choisissez un nom pour le mage")
+        if let userClasseNameChoice = readLine() {
+            playerOne.team[0].name = userClasseNameChoice
+            print("Votre mage s'appelle : \(playerOne.team[0].name)")
+        }
+    }
+    
+    func nameArchery() {
+        print("Choisissez un nom pour l'acher")
+        if let userClasseNameChoice = readLine() {
+            playerOne.team[0].name = userClasseNameChoice
+            print("Votre mage s'appelle : \(playerOne.team[0].name)")
+        }
+    }
+    
     public func createCompleteTeam() {
         print("Choisissez 3 Personnages !")
         while team.count < 3 {
             addClasse()
-        }
+        } // Ici ça pose problème à cause de l'index
         print("Vous avez dans votre équipe :" + playerOne.team[0].name + playerOne.team[1].name + playerOne.team[2].name)
         print(playerOne.team[0].name + " combat avec " + playerOne.team[0].weapon.name)
     }
@@ -87,33 +121,5 @@ public class Player {
                 print("Je n'ai pas compris")
             }
         }
-    }
-    
-    func nameWar() {
-        print("Choisissez un nom pour le guerrier")
-        if let userClasseNameChoice = readLine() {
-            playerOne.team[0].name = userClasseNameChoice
-            print("Votre guerrier s'appelle : \(playerOne.team[0].name)")
-        }
-    }
-    
-    func nameWizard() {
-        print("Choisissez un nom pour le mage")
-        
-        if let userClasseNameChoice = readLine() {
-            
-            playerOne.team[0].name = userClasseNameChoice
-            
-            print("Votre mage s'appelle : \(playerOne.team[0].name)")
-            
-        }
-    }
-    
-        func nameArchery() {
-            print("Choisissez un nom pour l'acher")
-            if let userClasseNameChoice = readLine() {
-                playerOne.team[0].name = userClasseNameChoice
-                print("Votre mage s'appelle : \(playerOne.team[0].name)")
-            }
     }
 }

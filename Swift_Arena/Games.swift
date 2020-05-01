@@ -8,42 +8,21 @@
 
 import Foundation
 
-
-
-
-
-
-
-
 public func startGames() {
     
-    
+    // Le joueur 1
     playerOne.namePlayerOne()
     playerOne.createCompleteTeam()
     
-    
-    
     // Le joueur 2
-    
-    print("Comment s'appelle le Joueur 2 ?")
-
-    if let userName = readLine() {
-        
-        playerTwo.name = userName
-    
-    }
-    
-    print("Le nom du joueur 2 est \(playerTwo.name)")
-
-    print("Bienvenue \(playerTwo.name)")
-
-    // Créer votre équipe
-    
+    playerTwo.namePlayerTwo()
     playerTwo.createCompleteTeam()
 
     
     print("Le combat oposera \(playerOne.name) vs \(playerTwo.name)")
-    
+    print(playerOne.name + " possède 3 classes :"
+        + "\n \(playerOne.team[0].name)"
+        + "\n \(playerOne.team[1].name)"
+        + "\n \(playerOne.team[2].name)")
     print("La suite en développement")
-
 }
