@@ -12,8 +12,11 @@ class War: Classe {
 
     override init(name: String, weapon: Weapons, life: Int) {
 
-        super.init(name: "Guerrier", weapon: weapon, life: 0)
+        super.init(name: name, weapon: weapon, life: 0)
 
     }
 
 }
+
+
+// ajouter un nom de classe qui ne changera pas comme le nom des personnages.

@@ -12,8 +12,7 @@ public class Archery: Classe {
   
     override init(name: String, weapon: Weapons, life: Int) {
     
-        super.init(name: "Archer", weapon: weapon, life: 0)
+        super.init(name: name, weapon: weapon, life: 0)
     
     }
-
 }

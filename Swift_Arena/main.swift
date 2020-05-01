@@ -8,4 +8,8 @@
 
 import Foundation
 
+public var playerOne = Player(name: "", team: [])
+
+public var playerTwo = Player(name: "", team: [])
+
 startGames()

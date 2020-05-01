@@ -12,8 +12,11 @@ public class Wizard: Classe {
 
     override init(name: String, weapon: Weapons, life: Int) {
        
-        super.init(name: "Mage", weapon: weapon, life: 0)
+        super.init(name: name, weapon: weapon, life: 0)
 
     }
+    
+   
+    
     
 }
