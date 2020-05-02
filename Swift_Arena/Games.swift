@@ -14,6 +14,7 @@ public func startGames() {
     playerOne.namePlayerOne()
     playerOne.createCompleteTeamForPlayerOne()
     
+
 // Le joueur 2
     playerTwo.namePlayerTwo()
     playerTwo.createCompleteTeamForPlayerTwo()
@@ -30,9 +31,11 @@ public func startGames() {
     
 }
 
+
 public func hPrint() { // Mettre les prints dans des enums ?
     print("----------------------------------")
 }
+
 
 public func P1attakP2() {
     print("Avec quel personnage attaquer ?")
@@ -54,6 +57,7 @@ public func P1attakP2() {
     
 }
 
+
 public func whoAttakP1VP2() {
     print("Qui voulez-vous attaquer ?"
         + "\n 1 - Attaquer le Guerrier de \(playerTwo.name)"
@@ -66,7 +70,7 @@ public func whoAttakP1VP2() {
         case "1":
             attakWar1V2WithWar()
         default:
-            <#code#>
+            print("...")
         }
     }
 }

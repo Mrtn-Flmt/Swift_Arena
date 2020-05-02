@@ -21,21 +21,28 @@ public class Player {
     // Pourquoi ne pas faire deux classes : PlayerOne et PlayerTwo Et override les méthodes de Player() ?
     
     //PlayerOne
+    
+    
+    
     public func namePlayerOne() {
         hPrint()
-        print("Comment s'appelle le Joueur 1 ?")
+        print("Comment s'appelle le joueur ?")
         if let userName = readLine() {
-            playerOne.name = userName
+            self.name = userName
         }
         print("Bienvenue \(playerOne.name) !")
     }
+    
+    
+    
+    
     
     
     public func addWarToTeam() {
         hPrint()
         let war = War(name: "", weapon: Sword(name: "Epe", hit: 10), life:
             150,firstName: "Guerrier")
-        playerOne.team.append(war, at: 0)
+        playerOne.team.insert(war, at: 0)
         print("Vous avez ajouté un \(war.firstName) à votre équipe !"
             + "\n \(war.weapon.name)"
             + "\n \(war.weapon.hit)")
@@ -46,7 +53,7 @@ public class Player {
         hPrint()
         let wizard = Wizard(name: "", weapon: Wand(name: "Baton",hit: 15),
                             life: 125,firstName: "Mage")
-        playerOne.team.append(wizard, at: 1)
+        playerOne.team.insert(wizard, at: 1)
         print("Vous avez ajouté un \(wizard.firstName) à votre équipe !"
             + "\n Son arme : \(wizard.weapon.name)"
             + "\n met \(wizard.weapon.hit) points de dégats.")
@@ -57,7 +64,7 @@ public class Player {
         hPrint()
         let archery = Archery(name: "", weapon: Bow(name: "Arc", hit: 20),
                               life: 100,firstName: "Archer")
-        playerOne.team.append(archery, at: 2)
+        playerOne.team.insert(archery, at: 2)
         print("Vous avez ajouté un \(archery.firstName) à votre équipe !"
             + "\n \(archery.weapon.name)"
             + "\n \(archery.weapon.hit)")
@@ -158,7 +165,7 @@ public class Player {
         hPrint()
         let war = War(name: "", weapon: Sword(name: "Epe", hit: 10), life:
             150,firstName: "Guerrier")
-        playerTwo.team.append(war, at: 0)
+        playerTwo.team.insert(war, at: 0)
         print("Vous avez ajouté un \(war.firstName) à votre équipe !"
             + "\n \(war.weapon.name)"
             + "\n \(war.weapon.hit)")
@@ -169,7 +176,7 @@ public class Player {
         hPrint()
         let wizard = Wizard(name: "", weapon: Wand(name: "Baton",hit: 15),
                             life: 125,firstName: "Mage")
-        playerTwo.team.append(wizard, at 1)
+        playerTwo.team.insert(wizard, at: 1)
         print("Vous avez ajouté un \(wizard.firstName) à votre équipe !"
             + "\n Son arme : \(wizard.weapon.name)"
             + "\n met \(wizard.weapon.hit) points de dégats.")
@@ -180,7 +187,7 @@ public class Player {
         hPrint()
         let archery = Archery(name: "", weapon: Bow(name: "Arc", hit: 20),
                               life: 100,firstName: "Archer")
-        playerTwo.team.append(archery, at: 2)
+        playerTwo.team.insert(archery, at: 2)
         print("Vous avez ajouté un \(archery.firstName) à votre équipe !"
             + "\n \(archery.weapon.name)"
             + "\n \(archery.weapon.hit)")
