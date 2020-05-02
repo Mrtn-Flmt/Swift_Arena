@@ -19,6 +19,3 @@ startGames()
 
 
 
-public func hPrint() {
-    print("----------------------------------")
-}

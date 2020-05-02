@@ -16,7 +16,6 @@ public func startGames() {
     playerOne.createCompleteTeamForPlayerOne()
     
     
-    playerTwo.namePlayerTwo()
     
     //Trouver un moyen d'appeler l'information autrement que par l'index
     print("La team de " + playerOne.name + " compose se de :"
@@ -27,3 +26,8 @@ public func startGames() {
     // Ici vient le combat.
     // ...
 }
+
+public func hPrint() {
+    print("----------------------------------")
+}
+

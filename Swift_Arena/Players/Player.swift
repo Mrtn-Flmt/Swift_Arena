@@ -16,10 +16,10 @@ public class Player {
     init(name:String,team: [Classe]) {
         self.name = name
         self.team = team
-        
     }
     
-    
+    // Pourquoi ne pas faire deux classes : PlayerOne et PlayerTwo ?
+    // Et faire un override des méthodes
     public func namePlayerOne() {
         hPrint()
         print("Comment s'appelle le Joueur 1 ?")
@@ -27,16 +27,6 @@ public class Player {
             playerOne.name = userName
         }
         print("Bienvenue \(playerOne.name) !")
-    }
-    
-    
-    public func namePlayerTwo() {
-        hPrint()
-        print("Comment s'appelle le Joueur 2 ?")
-        if let userName = readLine() {
-            playerTwo.name = userName
-        }
-        print("Bienvenue \(playerTwo.name) !")
     }
     
     
@@ -80,6 +70,7 @@ public class Player {
             playerOne.team[0].name = userClasseNameChoice
             print("Votre guerrier s'appelle : \(playerOne.team[0].name)")
         }
+        hPrint()
     }
     
     
@@ -90,6 +81,7 @@ public class Player {
             playerOne.team.last!.name = userClasseNameChoice
             print("Votre mage s'appelle : \(playerOne.team.last!.name)")
         }
+        hPrint()
     }
     
     
@@ -97,19 +89,19 @@ public class Player {
         hPrint()
         print("Choisissez un nom pour l'acher")
         if let userClasseNameChoice = readLine() {
-            playerOne.team[0].name = userClasseNameChoice
-            print("Votre mage s'appelle : \(playerOne.team[0].name)")
+            playerOne.team.last!.name = userClasseNameChoice
+            print("Votre mage s'appelle : \(playerOne.team.last!.name)")
         }
+        hPrint()
     }
     
     
-    // Ici ça pose problème à cause de l'index. -> problème avec les 3 méthode nameClasse au dessus
     public func createCompleteTeamForPlayerOne() {
         hPrint()
         print("Choisissez 3 Personnages !")
         addClassePlayerOne()
-        
     }
+    
     
     //-   -   -   -   -   -   -   -   -   -   -
     
@@ -134,10 +126,23 @@ public class Player {
                 nameArchery()
             default:
                 print("Je n'ai pas compris")
-                }
-            }
             }
             
         }
+        }
+        printInfosTeamName()
+    }
+    
+    func printInfosTeamName() {
+        hPrint()
+        print("Mon équipe se compose de :")
+        for name in playerOne.team {
+            print(name.name)
+            print(name.firstName)
+            hPrint()
+        }
+    }
+    
+    
     }
 
