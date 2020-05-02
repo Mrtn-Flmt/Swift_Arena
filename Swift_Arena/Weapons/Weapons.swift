@@ -11,15 +11,11 @@ import Foundation
 public class Weapons {
     
     var name: String
-    
     var hit: Int
-    
     init(name:String,hit:Int) {
-    
         self.name = name
-        
         self.hit = hit
-    
     }
+    
     
 }

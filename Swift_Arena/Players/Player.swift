@@ -18,8 +18,9 @@ public class Player {
         self.team = team
     }
     
-    // Pourquoi ne pas faire deux classes : PlayerOne et PlayerTwo ?
-    // Et faire un override des méthodes
+    // Pourquoi ne pas faire deux classes : PlayerOne et PlayerTwo Et override les méthodes de Player() ?
+    
+    //PlayerOne
     public func namePlayerOne() {
         hPrint()
         print("Comment s'appelle le Joueur 1 ?")
@@ -67,8 +68,8 @@ public class Player {
         hPrint()
         print("Choisissez un nom pour le guerrier")
         if let userClasseNameChoice = readLine() {
-            playerOne.team[0].name = userClasseNameChoice
-            print("Votre guerrier s'appelle : \(playerOne.team[0].name)")
+            playerOne.team.last!.name = userClasseNameChoice
+            print("Votre guerrier s'appelle : \(playerOne.team.last!.name)")
         }
         hPrint()
     }
@@ -103,9 +104,6 @@ public class Player {
     }
     
     
-    //-   -   -   -   -   -   -   -   -   -   -
-    
-    
     public func addClassePlayerOne() {
         hPrint()
     while playerOne.team.count < 3 {
@@ -127,11 +125,11 @@ public class Player {
             default:
                 print("Je n'ai pas compris")
             }
-            
         }
         }
         printInfosTeamName()
     }
+    
     
     func printInfosTeamName() {
         hPrint()
@@ -144,5 +142,126 @@ public class Player {
     }
     
     
+    //PlayerTwo
+    
+    public func namePlayerTwo() {
+        hPrint()
+        print("Comment s'appelle le Joueur 2 ?")
+        if let userName = readLine() {
+            playerTwo.name = userName
+        }
+        print("Bienvenue \(playerTwo.name) !")
     }
+    
+    
+    public func addWarToTeamTwo() {
+        hPrint()
+        let war = War(name: "", weapon: Sword(name: "Epe", hit: 10), life:
+            150,firstName: "Guerrier")
+        playerTwo.team.append(war)
+        print("Vous avez ajouté un \(war.firstName) à votre équipe !"
+            + "\n \(war.weapon.name)"
+            + "\n \(war.weapon.hit)")
+    }
+    
+    
+    public func addWizardToTeamTwo() {
+        hPrint()
+        let wizard = Wizard(name: "", weapon: Wand(name: "Baton",hit: 15),
+                            life: 125,firstName: "Mage")
+        playerTwo.team.append(wizard)
+        print("Vous avez ajouté un \(wizard.firstName) à votre équipe !"
+            + "\n Son arme : \(wizard.weapon.name)"
+            + "\n met \(wizard.weapon.hit) points de dégats.")
+    }
+    
+    
+    public func addArcheryToTeamTwo() {
+        hPrint()
+        let archery = Archery(name: "", weapon: Bow(name: "Arc", hit: 20),
+                              life: 100,firstName: "Archer")
+        playerTwo.team.append(archery)
+        print("Vous avez ajouté un \(archery.firstName) à votre équipe !"
+            + "\n \(archery.weapon.name)"
+            + "\n \(archery.weapon.hit)")
+    }
+    
+    
+    func nameWarTwo() {
+        hPrint()
+        print("Choisissez un nom pour le guerrier")
+        if let userClasseNameChoice = readLine() {
+            playerTwo.team.last!.name = userClasseNameChoice
+            print("Votre guerrier s'appelle : \(playerTwo.team.last!.name)")
+        }
+        hPrint()
+    }
+    
+    
+    func nameWizardTwo() {
+        hPrint()
+        print("Choisissez un nom pour le mage")
+        if let userClasseNameChoice = readLine() {
+            playerTwo.team.last!.name = userClasseNameChoice
+            print("Votre mage s'appelle : \(playerTwo.team.last!.name)")
+        }
+        hPrint()
+    }
+    
+    
+    func nameArcheryTwo() {
+        hPrint()
+        print("Choisissez un nom pour l'acher")
+        if let userClasseNameChoice = readLine() {
+            playerTwo.team.last!.name = userClasseNameChoice
+            print("Votre mage s'appelle : \(playerTwo.team.last!.name)")
+        }
+        hPrint()
+    }
+    
+    
+    public func createCompleteTeamForPlayerTwo() {
+        hPrint()
+        print("Choisissez 3 Personnages !")
+        addClassePlayerTwo()
+    }
+    
+    
+    public func addClassePlayerTwo() {
+        hPrint()
+    while playerTwo.team.count < 3 {
+        print("Sélectionner une classe à ajouter dans votre équipe !"
+            + "\n 1 - Guerrier"
+            + "\n 2 - Mage"
+            + "\n 3 - Archer")
+        if let userChoiceCase = readLine() {
+            switch userChoiceCase {
+            case "1":
+                addWarToTeamTwo()
+                nameWarTwo()
+            case "2":
+                addWizardToTeamTwo()
+                nameWizardTwo()
+            case "3":
+                addArcheryToTeamTwo()
+                nameArcheryTwo()
+            default:
+                print("Je n'ai pas compris")
+            }
+        }
+        }
+        printInfosTeamName()
+    }
+    
+    
+    func printInfosTeamNameTwo() {
+        hPrint()
+        print("Mon équipe se compose de :")
+        for name in playerTwo.team {
+            print(name.name)
+            print(name.firstName)
+            hPrint()
+        }
+    }
+}
 

@@ -10,24 +10,25 @@ import Foundation
 
 public func startGames() {
     
-    // Le joueur 1
-
+// Le joueur 1
     playerOne.namePlayerOne()
     playerOne.createCompleteTeamForPlayerOne()
     
+// Le joueur 2
+    playerTwo.namePlayerTwo()
+    playerTwo.createCompleteTeamForPlayerTwo()
     
+// Combat
+    print("Le combat va opposer :"
+        + "\n \(playerOne.name)")
+    playerOne.printInfosTeamName()
+    print("\n vs"
+        + "\n \(playerTwo.name)")
+    playerTwo.printInfosTeamNameTwo()
     
-    //Trouver un moyen d'appeler l'information autrement que par l'index
-    print("La team de " + playerOne.name + " compose se de :"
-        + "\n   \(playerOne.team.last!.firstName) : \(playerOne.team.last!.name)"
-        + "\n   \(playerOne.team[1].firstName) : \(playerOne.team[1].name)"
-        + "\n   \(playerOne.team[0].firstName) : \(playerOne.team[0].name)")
-    
-    // Ici vient le combat.
-    // ...
 }
 
-public func hPrint() {
+public func hPrint() { // Mettre les prints dans des enums ?
     print("----------------------------------")
 }
 

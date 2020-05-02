@@ -9,10 +9,9 @@
 import Foundation
 
 public class Sword: Weapons {
-    
     override init(name: String, hit:Int) {
-    
         super.init(name:"Epe",hit:10)
     }
+    
 
 }
