@@ -35,7 +35,7 @@ public class Player {
         hPrint()
         let war = War(name: "", weapon: Sword(name: "Epe", hit: 10), life:
             150,firstName: "Guerrier")
-        playerOne.team.append(war)
+        playerOne.team.append(war, at: 0)
         print("Vous avez ajouté un \(war.firstName) à votre équipe !"
             + "\n \(war.weapon.name)"
             + "\n \(war.weapon.hit)")
@@ -46,7 +46,7 @@ public class Player {
         hPrint()
         let wizard = Wizard(name: "", weapon: Wand(name: "Baton",hit: 15),
                             life: 125,firstName: "Mage")
-        playerOne.team.append(wizard)
+        playerOne.team.append(wizard, at: 1)
         print("Vous avez ajouté un \(wizard.firstName) à votre équipe !"
             + "\n Son arme : \(wizard.weapon.name)"
             + "\n met \(wizard.weapon.hit) points de dégats.")
@@ -57,7 +57,7 @@ public class Player {
         hPrint()
         let archery = Archery(name: "", weapon: Bow(name: "Arc", hit: 20),
                               life: 100,firstName: "Archer")
-        playerOne.team.append(archery)
+        playerOne.team.append(archery, at: 2)
         print("Vous avez ajouté un \(archery.firstName) à votre équipe !"
             + "\n \(archery.weapon.name)"
             + "\n \(archery.weapon.hit)")
@@ -68,8 +68,8 @@ public class Player {
         hPrint()
         print("Choisissez un nom pour le guerrier")
         if let userClasseNameChoice = readLine() {
-            playerOne.team.last!.name = userClasseNameChoice
-            print("Votre guerrier s'appelle : \(playerOne.team.last!.name)")
+            playerOne.team[0].name = userClasseNameChoice
+            print("Votre guerrier s'appelle : \(playerOne.team[0].name)")
         }
         hPrint()
     }
@@ -79,8 +79,8 @@ public class Player {
         hPrint()
         print("Choisissez un nom pour le mage")
         if let userClasseNameChoice = readLine() {
-            playerOne.team.last!.name = userClasseNameChoice
-            print("Votre mage s'appelle : \(playerOne.team.last!.name)")
+            playerOne.team[1].name = userClasseNameChoice
+            print("Votre mage s'appelle : \(playerOne.team[1].name)")
         }
         hPrint()
     }
@@ -90,8 +90,8 @@ public class Player {
         hPrint()
         print("Choisissez un nom pour l'acher")
         if let userClasseNameChoice = readLine() {
-            playerOne.team.last!.name = userClasseNameChoice
-            print("Votre mage s'appelle : \(playerOne.team.last!.name)")
+            playerOne.team[2].name = userClasseNameChoice
+            print("Votre mage s'appelle : \(playerOne.team[2].name)")
         }
         hPrint()
     }
@@ -158,7 +158,7 @@ public class Player {
         hPrint()
         let war = War(name: "", weapon: Sword(name: "Epe", hit: 10), life:
             150,firstName: "Guerrier")
-        playerTwo.team.append(war)
+        playerTwo.team.append(war, at: 0)
         print("Vous avez ajouté un \(war.firstName) à votre équipe !"
             + "\n \(war.weapon.name)"
             + "\n \(war.weapon.hit)")
@@ -169,7 +169,7 @@ public class Player {
         hPrint()
         let wizard = Wizard(name: "", weapon: Wand(name: "Baton",hit: 15),
                             life: 125,firstName: "Mage")
-        playerTwo.team.append(wizard)
+        playerTwo.team.append(wizard, at 1)
         print("Vous avez ajouté un \(wizard.firstName) à votre équipe !"
             + "\n Son arme : \(wizard.weapon.name)"
             + "\n met \(wizard.weapon.hit) points de dégats.")
@@ -180,7 +180,7 @@ public class Player {
         hPrint()
         let archery = Archery(name: "", weapon: Bow(name: "Arc", hit: 20),
                               life: 100,firstName: "Archer")
-        playerTwo.team.append(archery)
+        playerTwo.team.append(archery, at: 2)
         print("Vous avez ajouté un \(archery.firstName) à votre équipe !"
             + "\n \(archery.weapon.name)"
             + "\n \(archery.weapon.hit)")
@@ -191,8 +191,8 @@ public class Player {
         hPrint()
         print("Choisissez un nom pour le guerrier")
         if let userClasseNameChoice = readLine() {
-            playerTwo.team.last!.name = userClasseNameChoice
-            print("Votre guerrier s'appelle : \(playerTwo.team.last!.name)")
+            playerTwo.team[0].name = userClasseNameChoice
+            print("Votre guerrier s'appelle : \(playerTwo.team[0].name)")
         }
         hPrint()
     }
@@ -202,8 +202,8 @@ public class Player {
         hPrint()
         print("Choisissez un nom pour le mage")
         if let userClasseNameChoice = readLine() {
-            playerTwo.team.last!.name = userClasseNameChoice
-            print("Votre mage s'appelle : \(playerTwo.team.last!.name)")
+            playerTwo.team[1].name = userClasseNameChoice
+            print("Votre mage s'appelle : \(playerTwo.team[1].name)")
         }
         hPrint()
     }
@@ -213,8 +213,8 @@ public class Player {
         hPrint()
         print("Choisissez un nom pour l'acher")
         if let userClasseNameChoice = readLine() {
-            playerTwo.team.last!.name = userClasseNameChoice
-            print("Votre mage s'appelle : \(playerTwo.team.last!.name)")
+            playerTwo.team[2].name = userClasseNameChoice
+            print("Votre mage s'appelle : \(playerTwo.team[2].name)")
         }
         hPrint()
     }
