@@ -10,6 +10,8 @@ import Foundation
 
 public class Classe {
     
+    var firstName: String
+    
     var name: String
     
     var weapon: Weapons
@@ -17,8 +19,10 @@ public class Classe {
     var life: Int
     
     
-    init(name: String, weapon: Weapons, life: Int) {
+    init(name: String, weapon: Weapons, life: Int, firstName: String) {
     
+        self.firstName = firstName
+        
         self.name = name
         
         self.weapon = weapon

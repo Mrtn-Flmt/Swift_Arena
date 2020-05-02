@@ -11,18 +11,19 @@ import Foundation
 public func startGames() {
     
     // Le joueur 1
-    playerOne.namePlayerOne()
-    playerOne.createCompleteTeam()
-    
-    // Le joueur 2
-    playerTwo.namePlayerTwo()
-    playerTwo.createCompleteTeam()
 
+    playerOne.namePlayerOne()
+    playerOne.createCompleteTeamForPlayerOne()
     
-    print("Le combat oposera \(playerOne.name) vs \(playerTwo.name)")
-    print(playerOne.name + " possède 3 classes :"
-        + "\n \(playerOne.team[0].name)"
-        + "\n \(playerOne.team[1].name)"
-        + "\n \(playerOne.team[2].name)")
-    print("La suite en développement")
+    
+    playerTwo.namePlayerTwo()
+    
+    //Trouver un moyen d'appeler l'information autrement que par l'index
+    print("La team de " + playerOne.name + " compose se de :"
+        + "\n   \(playerOne.team.last!.firstName) : \(playerOne.team.last!.name)"
+        + "\n   \(playerOne.team[1].firstName) : \(playerOne.team[1].name)"
+        + "\n   \(playerOne.team[0].firstName) : \(playerOne.team[0].name)")
+    
+    // Ici vient le combat.
+    // ...
 }

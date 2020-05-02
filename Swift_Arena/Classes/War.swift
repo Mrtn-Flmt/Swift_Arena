@@ -10,9 +10,9 @@ import Foundation
 
 class War: Classe {
 
-    override init(name: String, weapon: Weapons, life: Int) {
+    override init(name: String, weapon: Weapons, life: Int,firstName: String) {
 
-        super.init(name: name, weapon: weapon, life: 0)
+        super.init(name: name, weapon: weapon, life: life,firstName: firstName)
 
     }
 

@@ -13,3 +13,12 @@ public var playerOne = Player(name: "", team: [])
 public var playerTwo = Player(name: "", team: [])
 
 startGames()
+
+
+
+
+
+
+public func hPrint() {
+    print("----------------------------------")
+}
