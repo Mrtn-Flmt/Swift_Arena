@@ -15,7 +15,3 @@ public var playerTwo = Player(name: "", team: [])
 startGames()
 
 
-
-
-
-

@@ -14,19 +14,17 @@ public func startGames() {
     playerOne.namePlayerOne()
     playerOne.createCompleteTeamForPlayerOne()
     
-
 // Le joueur 2
     playerTwo.namePlayerTwo()
     playerTwo.createCompleteTeamForPlayerTwo()
-
+    
 // stat des joueurs
-    print("Le combat va opposer :"
+    print("👾Le combat va opposer :"
         + "\n \(playerOne.name)")
     playerOne.printInfosTeamName()
     print("\n vs"
         + "\n \(playerTwo.name)")
     playerTwo.printInfosTeamNameTwo()
-    
     
     
 }

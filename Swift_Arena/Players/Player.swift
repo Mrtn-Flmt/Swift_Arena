@@ -18,12 +18,12 @@ public class Player {
         self.team = team
     }
     
+    
     // Pourquoi ne pas faire deux classes : PlayerOne et PlayerTwo Et override les méthodes de Player() ?
     
     //PlayerOne
     
-    
-    
+    // name first player
     public func namePlayerOne() {
         hPrint()
         print("Comment s'appelle le joueur ?")
@@ -34,43 +34,43 @@ public class Player {
     }
     
     
-    
-    
-    
-    
+    // add to the first player's team : the "Warrior"
     public func addWarToTeam() {
         hPrint()
-        let war = War(name: "", weapon: Sword(name: "Epe", hit: 10), life:
+        let war = Warrior(name: "", weapon: Sword(name: "Epe", hit: 10), life:
             150,firstName: "Guerrier")
         playerOne.team.insert(war, at: 0)
-        print("Vous avez ajouté un \(war.firstName) à votre équipe !"
+        print("⚔️ Vous avez ajouté un \(war.firstName) à votre équipe ! 🛡"
             + "\n \(war.weapon.name)"
             + "\n \(war.weapon.hit)")
     }
     
-    
+
+    // add to the player's team : the "Wizard"
     public func addWizardToTeam() {
         hPrint()
         let wizard = Wizard(name: "", weapon: Wand(name: "Baton",hit: 15),
                             life: 125,firstName: "Mage")
         playerOne.team.insert(wizard, at: 1)
-        print("Vous avez ajouté un \(wizard.firstName) à votre équipe !"
+        print("🧙‍♂️ Vous avez ajouté un \(wizard.firstName) à votre équipe ! ☂️"
             + "\n Son arme : \(wizard.weapon.name)"
             + "\n met \(wizard.weapon.hit) points de dégats.")
     }
     
     
+    // Add to the player's team : the "Archery"
     public func addArcheryToTeam() {
         hPrint()
         let archery = Archery(name: "", weapon: Bow(name: "Arc", hit: 20),
                               life: 100,firstName: "Archer")
         playerOne.team.insert(archery, at: 2)
-        print("Vous avez ajouté un \(archery.firstName) à votre équipe !"
+        print("🏹 Vous avez ajouté un \(archery.firstName) à votre équipe ! 🎯"
             + "\n \(archery.weapon.name)"
             + "\n \(archery.weapon.hit)")
     }
     
     
+    // Give a name to first player’s warrior
     func nameWar() {
         hPrint()
         print("Choisissez un nom pour le guerrier")
@@ -115,9 +115,9 @@ public class Player {
         hPrint()
     while playerOne.team.count < 3 {
         print("Sélectionner une classe à ajouter dans votre équipe !"
-            + "\n 1 - Guerrier"
-            + "\n 2 - Mage"
-            + "\n 3 - Archer")
+            + "\n 1 - ⚔️ Guerrier ⚔️"
+            + "\n 2 - 🧙‍♂️ Mage 🧙‍♂️"
+            + "\n 3 - 🏹 Archer 🏹")
         if let userChoiceCase = readLine() {
             switch userChoiceCase {
             case "1":
@@ -161,12 +161,12 @@ public class Player {
     }
     
     
-    public func addWarToTeamTwo() {
-        hPrint()
-        let war = War(name: "", weapon: Sword(name: "Epe", hit: 10), life:
+    public func addWarToTeamTwo() { // Je peux remplacer playerTwo par
+        hPrint()                    // le mot clef self.
+        let war = Warrior(name: "", weapon: Sword(name: "Epe", hit: 10), life:
             150,firstName: "Guerrier")
         playerTwo.team.insert(war, at: 0)
-        print("Vous avez ajouté un \(war.firstName) à votre équipe !"
+        print("⚔️ Vous avez ajouté un \(war.firstName) à votre équipe ! 🛡"
             + "\n \(war.weapon.name)"
             + "\n \(war.weapon.hit)")
     }
@@ -177,7 +177,7 @@ public class Player {
         let wizard = Wizard(name: "", weapon: Wand(name: "Baton",hit: 15),
                             life: 125,firstName: "Mage")
         playerTwo.team.insert(wizard, at: 1)
-        print("Vous avez ajouté un \(wizard.firstName) à votre équipe !"
+        print("🧙‍♂️ Vous avez ajouté un \(wizard.firstName) à votre équipe ! ☂️"
             + "\n Son arme : \(wizard.weapon.name)"
             + "\n met \(wizard.weapon.hit) points de dégats.")
     }
@@ -188,7 +188,7 @@ public class Player {
         let archery = Archery(name: "", weapon: Bow(name: "Arc", hit: 20),
                               life: 100,firstName: "Archer")
         playerTwo.team.insert(archery, at: 2)
-        print("Vous avez ajouté un \(archery.firstName) à votre équipe !"
+        print("🏹 Vous avez ajouté un \(archery.firstName) à votre équipe ! 🎯"
             + "\n \(archery.weapon.name)"
             + "\n \(archery.weapon.hit)")
     }
@@ -238,9 +238,9 @@ public class Player {
         hPrint()
     while playerTwo.team.count < 3 {
         print("Sélectionner une classe à ajouter dans votre équipe !"
-            + "\n 1 - Guerrier"
-            + "\n 2 - Mage"
-            + "\n 3 - Archer")
+            + "\n 1 - ⚔️ Guerrier ⚔️"
+            + "\n 2 - 🧙‍♂️ Mage 🧙‍♂️"
+            + "\n 3 - 🏹 Archer 🏹")
         if let userChoiceCase = readLine() {
             switch userChoiceCase {
             case "1":
