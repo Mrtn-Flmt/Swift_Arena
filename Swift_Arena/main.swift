@@ -12,6 +12,19 @@ public var playerOne = Player(name: "", team: [])
 
 public var playerTwo = Player(name: "", team: [])
 
-startGames()
+playerOne.createPlayer()
+playerTwo.createPlayer()
 
-
+print("L'équipe oppose :"
+    + "\n joueur 1 : \(playerOne.name)"
+    + "\n \(playerOne.team[0].name)"
+    + "\n \(playerOne.team[1].name)"
+    + "\n \(playerOne.team[2].name)"
+    + "\n"
+    + "\n vs"
+    + "\n"
+    + "\n joueur 2 \(playerTwo.name)"
+    + "\n' \(playerTwo.team[0].name)"
+    + "\n \(playerTwo.team[1].name)"
+    + "\n \(playerTwo.team[2].name)"
+)
