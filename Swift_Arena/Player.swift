@@ -28,7 +28,7 @@ public class Player {
         self.makeTeam()
     }
     
-        
+    
     //nommer le joueur
     func namePlayer() {
         
@@ -36,10 +36,12 @@ public class Player {
         uneLigne()
         print("Comment tu t'appelles ?")
         uneLigne()
+        hPrint()
         if let userName = readLine() {
             self.name = userName
         }
-        deuxLigne()
+        hPrint()
+        uneLigne()
         print("Bienvenue \(self.name) !")
         uneLigne()
         
@@ -54,12 +56,11 @@ public class Player {
         while self.team.count < 3 {
             print("Sélectionner une classe :")
             uneLigne()
-            
-            print ("1 - ⚔️ Guerrier ⚔️"
+            print ("1 - 🛡 Guerrier 🛡"
                 + "\n2 - 🧙‍♂️ Mage 🧙‍♂️"
                 + "\n3 - 🏹 Archer 🏹")
             uneLigne()
-            
+            hPrint()
             if let userChoiceCase = readLine() {
                 switch userChoiceCase {
                 case "1":
@@ -81,42 +82,43 @@ public class Player {
     
     //ajouter un Guerrier à son équipe + appel de la méthode nommer
     func addWarToTeam() {
-        let war = Warrior(name: "", weapon: Sword(name: "Epe", hit: 10), life:
-            150,firstName: "Guerrier")
+        let war = Warrior(name: "", weapon: Sword(name: "⚔️ Epe ⚔️", hit: 10), life:
+            150,firstName: "🛡 Guerrier 🛡")
         self.team.append(war)
         nameCharacter()
-        print("⚔️ Vous avez ajouté un \(self.team.last!.firstName) à votre équipe ! 🛡")
+        print("Vous avez ajouté un \(self.team.last!.firstName) à votre équipe !")
         uneLigne()
-        print("\(self.team.last!.weapon.name)"
-            + "\n\(self.team.last!.weapon.hit) points de dégats")
-        uneLigne()
-        
+        print("l'arme du \(self.team.last!.firstName) est :"
+        + "\n\(self.team.last!.weapon.name)"
+        + "\n\(self.team.last!.weapon.hit) points de dégats")
     }
         
         
     //ajouter un Mage à son équipe + appel de la méthode nommer
     func addWizardToTeam() {
-        let wizard = Wizard(name: "", weapon: Wand(name: "Baton",hit: 15),
-                            life: 125,firstName: "Mage")
+        let wizard = Wizard(name: "", weapon: Wand(name: "🔥 Baton 🔥",hit: 15),
+                            life: 125,firstName: "🧙‍♂️ Mage 🧙‍♂️")
         self.team.append(wizard)
         nameCharacter()
-        print("🧙‍♂️ Vous avez ajouté un \(self.team.last!.firstName) à votre équipe ! ☂️")
+        print("🧙‍♂️ Vous avez ajouté un \(self.team.last!.firstName) à votre équipe ! 🧙‍♂️")
         uneLigne()
-        print("\(self.team.last!.weapon.name)"
-            + "\n\(self.team.last!.weapon.hit) points de dégats")
+        print("l'arme du \(self.team.last!.firstName) est :"
+        + "\n\(self.team.last!.weapon.name)"
+        + "\n\(self.team.last!.weapon.hit) points de dégats")
         uneLigne()
     }
         
         
     //ajouter un Archer à son équipe + appel de la méthode nommer
     func addArcheryToTeam() {
-        let archery = Archery(name: "", weapon: Bow(name: "Arc", hit: 20),
-                              life: 100,firstName: "Archer")
+        let archery = Archery(name: "", weapon: Bow(name: "🏹 Arc 🏹", hit: 20),
+                              life: 100,firstName: "🎯 Archer 🎯")
         self.team.append(archery)
         nameCharacter()
-        print("🏹 Vous avez ajouté un \(self.team.last!.firstName) à votre équipe ! 🎯")
+        print("🏹 Vous avez ajouté un \(self.team.last!.firstName) à votre équipe ! 🏹")
             uneLigne()
-            print("\(self.team.last!.weapon.name)"
+        print("l'arme du \(self.team.last!.firstName) est :"
+                + "\n\(self.team.last!.weapon.name)"
                 + "\n\(self.team.last!.weapon.hit) points de dégats")
             uneLigne()
     }
@@ -124,14 +126,17 @@ public class Player {
         
     //Nommer son character
     func nameCharacter() {
-        deuxLigne()
+        hPrint()
+        uneLigne()
         print("Vous souhaitez ajouter un \(self.team.last!.firstName)")
         uneLigne()
         print("Donnez lui un nom pour l'ajouter à votre équipe :")
         uneLigne()
+        hPrint()
         if let userClasseNameChoice = readLine() {
             self.team.last!.name = userClasseNameChoice
-            deuxLigne()
+            hPrint()
+            uneLigne()
         }
     }
     

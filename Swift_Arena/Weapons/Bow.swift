@@ -10,7 +10,7 @@ import Foundation
 
 public class Bow: Weapons {
     override init(name: String, hit: Int) {
-        super.init(name: "Arc", hit: 50)
+        super.init(name: name, hit: hit)
     }
 
     
