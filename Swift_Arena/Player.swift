@@ -12,7 +12,6 @@ import Foundation
 // Classe Joueur
 
 public class Player {
-    
     var name: String
     var team: [Character]
     
@@ -31,7 +30,6 @@ public class Player {
     
     //nommer le joueur
     func namePlayer() {
-        
         print("Hello !")
         uneLigne()
         print("Comment tu t'appelles ?")
@@ -44,7 +42,6 @@ public class Player {
         uneLigne()
         print("Bienvenue \(self.name) !")
         uneLigne()
-        
     }
     
     
@@ -52,7 +49,6 @@ public class Player {
     func makeTeam() {
         print("Tu vas devoir remplir une équipe de trois personnages en choisissant pour chacun une classe et un nom !")
         uneLigne()
-        
         while self.team.count < 3 {
             print("Sélectionner une classe :")
             uneLigne()
@@ -65,7 +61,6 @@ public class Player {
                 switch userChoiceCase {
                 case "1":
                     addWarToTeam()
-                    
                 case "2":
                     addWizardToTeam()
                     
@@ -140,5 +135,65 @@ public class Player {
         }
     }
     
+    
+    //action Player One
+    public func selectAction() {
+        print("\(self.name) Selectionne ?"
+            + "\n1 - \(self.team[0].firstName)//\(self.team[0].name)"
+            + "\n1 - \(self.team[1].firstName)//\(self.team[1].name)"
+            + "\n1 - \(self.team[2].firstName)//\(self.team[2].name)")
+        if let selectAction = readLine() {
+            switch selectAction {
+            case "1":
+                actionWar()
+            case "2":
+                print("Qu'est ce que \(self.team[1].firstName) doit faire ?")
+            case "3":
+                print("Qu'est ce que \(self.team[2].firstName) doit faire ?")
+            default:
+                print("Je n'ai pas compris.")
+            }
+        }
+    }
+    
+    
+    public func actionWar() {
+        print("Qu'est ce que \(self.team[0].firstName) doit faire ?"
+            + "\n1 - Attaquer"
+            + "\n2 - soigner"
+            + "\n3 - Envouter son arme")
+        if let actionWarChoice = readLine() {
+            switch actionWarChoice {
+            case "1":
+                print("")
+            case "2":
+                print("\(self.team[0].name) soigne qui ?")
+                
+            case "3":
+                print("\(self.team[0].name) a envouté son arme")
+                self.team[0].weapon.hit += 5
+            default:
+                print("Je n'ai pas compris.")
+            }
+        }
+    }
+    
+    
+    
+    
+    public func whoWarAttak() {
+        print("\(self.team[0].name) Attaque qui ?")     //Comment récupérer la classe lors du choix de l'utilisateur ?
+        
+        if let warAttakChoice = readLine() {
+            switch warAttakChoice {
+            case "1":
+                print("war attaque Le \(playerTwo.team[0])")
+            default:
+                print("")
+            }
+            
+        }
+        
+    }
     
 }

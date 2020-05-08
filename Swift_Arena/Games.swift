@@ -9,24 +9,28 @@
 import Foundation
 
 
-public func hPrint() { // Mettre les prints dans des enums ?
+public func hPrint() { 
     print("----------------------------------")
 }
+
 
 public func petitHprint() {
     print("-   -   -")
 }
 
+
 public func uneLigne() {
     print("")
 }
+
 
 public func deuxLigne() {
     print(""
     + "\n")
 }
 
-public func statGame() {
+
+public func printOposition() {
     print("L'équipe oppose :"
         + "\n"
         + "\n joueur 1 : \(playerOne.name)"
@@ -47,5 +51,3 @@ public func statGame() {
         + "\n"
     )
 }
-
-

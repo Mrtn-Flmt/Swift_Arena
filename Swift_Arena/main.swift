@@ -16,4 +16,4 @@ playerOne.createPlayer()
 
 playerTwo.createPlayer()
 
-statGame()
+printOposition()
