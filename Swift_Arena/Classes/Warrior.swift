@@ -8,14 +8,10 @@
 
 import Foundation
 
-class Warrior: Classe {
-
+public class Warrior: Classe {
     override init(name: String, weapon: Weapons, life: Int,firstName: String) {
-
         super.init(name: name, weapon: weapon, life: life,firstName: firstName)
-
     }
-
 }
 
 
