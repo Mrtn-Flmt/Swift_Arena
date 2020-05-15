@@ -8,12 +8,17 @@
 
 import Foundation
 
-public var playerOne = Player(name: "", team: [])
 
-public var playerTwo = Player(name: "", team: [])
+var playerOne = Player(name: "", team: [])
+var playerTwo = Player(name: "", team: [])
 
-playerOne.createPlayer()
+func start() {
+    playerOne.namePlayer()
+    playerOne.addCharacter()
+    
+    playerTwo.namePlayer()
+    playerTwo.addCharacter()
+}
 
-playerTwo.createPlayer()
 
-printOposition()
+start()

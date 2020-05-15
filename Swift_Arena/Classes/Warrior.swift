@@ -8,14 +8,9 @@
 
 import Foundation
 
-class Warrior: Character {
-
-    override init(name: String, weapon: Weapons, life: Int,firstName: String) {
-        super.init(name: name, weapon: weapon, life: life,firstName: firstName)
-    }
-
+public class Warrior: Character {
     
+    override init(name: String, weapon: Weapons, life: Int, firstName: String) {
+        super.init(name: name, weapon: weapon, life: life, firstName: firstName)
+    }
 }
-
-
-// ajouter un nom de classe qui ne changera pas comme le nom des personnages.

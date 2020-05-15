@@ -17,7 +17,6 @@
 		6486C8B2245A307F000FC612 /* Warrior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6486C8B1245A307F000FC612 /* Warrior.swift */; };
 		6486C8B4245A30DF000FC612 /* Wizard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6486C8B3245A30DF000FC612 /* Wizard.swift */; };
 		6486C8B6245A314A000FC612 /* Archery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6486C8B5245A314A000FC612 /* Archery.swift */; };
-		6486C8B8245A5892000FC612 /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6486C8B7245A5892000FC612 /* Games.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,7 +43,6 @@
 		6486C8B1245A307F000FC612 /* Warrior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Warrior.swift; sourceTree = "<group>"; };
 		6486C8B3245A30DF000FC612 /* Wizard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wizard.swift; sourceTree = "<group>"; };
 		6486C8B5245A314A000FC612 /* Archery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Archery.swift; sourceTree = "<group>"; };
-		6486C8B7245A5892000FC612 /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +75,6 @@
 		6486C89B245A2DDB000FC612 /* Swift_Arena */ = {
 			isa = PBXGroup;
 			children = (
-				6486C8B7245A5892000FC612 /* Games.swift */,
 				6486C89C245A2DDB000FC612 /* main.swift */,
 				6486C8AD245A2FA9000FC612 /* Player.swift */,
 				6486C8A4245A2E1B000FC612 /* Classes */,
@@ -170,7 +167,6 @@
 				6486C8B4245A30DF000FC612 /* Wizard.swift in Sources */,
 				6486C8B0245A3001000FC612 /* Character.swift in Sources */,
 				6486C8AE245A2FA9000FC612 /* Player.swift in Sources */,
-				6486C8B8245A5892000FC612 /* Games.swift in Sources */,
 				6486C89D245A2DDB000FC612 /* main.swift in Sources */,
 				6486C8A8245A2E5B000FC612 /* Wand.swift in Sources */,
 				6486C8B6245A314A000FC612 /* Archery.swift in Sources */,

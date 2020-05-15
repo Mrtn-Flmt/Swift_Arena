@@ -9,19 +9,14 @@
 import Foundation
 
 public class Character {
-    
     var firstName: String
     var name: String
     var weapon: Weapons
     var life: Int
-    
     init(name: String, weapon: Weapons, life: Int, firstName: String) {
         self.firstName = firstName
         self.name = name
         self.weapon = weapon
         self.life = life
     }
-    
-    
 }
-
