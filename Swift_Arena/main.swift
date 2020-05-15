@@ -8,14 +8,18 @@
 
 import Foundation
 
-public var playerOne = Player(name: "", team: [])
 
-public var playerTwo = Player(name: "", team: [])
+var playerOne = Player(name: "", team: [])
+var playerTwo = Player(name: "", team: [])
 
-startGames()
+func start() {
+    playerOne.addCharacter()
+    playerTwo.addCharacter()
+}
 
 
 
 
 
+start()
 
