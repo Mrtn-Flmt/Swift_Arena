@@ -11,9 +11,9 @@ import Foundation
 public class Player {
     
     var name: String
-    var team:[Classe]
+    var team:[Character]
     
-    init(name:String,team: [Classe]) {
+    init(name:String,team: [Character]) {
         self.name = name
         self.team = team
     }
@@ -37,15 +37,15 @@ public class Player {
             if let userChoiceCase = readLine() {
                 switch userChoiceCase {
                 case "1":
-                    let warrior = Warrior(name: "", weapon: Sword(name: "Epe", hit: 10), life: 150, firstName: "Guerrier")
+                    let warrior = Warrior(name: "", weapon: Sword(name: "Epe", hit: 10), life: 150, firstName: "🛡 Guerrier 🛡")
                     self.team.append(warrior)
                     self.nameCharacter()
                 case "2":
-                    let wizard = Wizard(name: "", weapon: Wand(name: "Baton", hit: 15), life: 125, firstName: "Mage")
+                    let wizard = Wizard(name: "", weapon: Wand(name: "Baton", hit: 15), life: 125, firstName: "🧙‍♂️ Mage 🧙‍♂️")
                     self.team.append(wizard)
                     self.nameCharacter()
                 case "3":
-                    let archery = Archery(name: "", weapon: Bow(name: "Arc", hit: 20), life: 100, firstName: "Archer")
+                    let archery = Archery(name: "", weapon: Bow(name: "Arc", hit: 20), life: 100, firstName: "🏹 Archer 🏹")
                     self.team.append(archery)
                     self.nameCharacter()
                 default:
@@ -55,14 +55,14 @@ public class Player {
         }
         print("L'équipe de \(self.name) se compose de :")
         for name in self.team {
-            print(name.name)
             print(name.firstName)
+            print(name.name + "\n")
         }
     }
     
     
     public func nameCharacter() {
-        print("Choisissez un nom pour le \(self.team.last!.firstName)")
+        print("Choisissez un nom pour votre \(self.team.last!.firstName)")
         if let userClasseNameChoice = readLine() {
             self.team.last!.name = userClasseNameChoice
             print("Votre \(self.team.last!.firstName) s'appelle : \(self.team.last!.name)")

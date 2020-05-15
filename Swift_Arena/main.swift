@@ -13,7 +13,10 @@ var playerOne = Player(name: "", team: [])
 var playerTwo = Player(name: "", team: [])
 
 func start() {
+    playerOne.namePlayer()
     playerOne.addCharacter()
+    
+    playerTwo.namePlayer()
     playerTwo.addCharacter()
 }
 
