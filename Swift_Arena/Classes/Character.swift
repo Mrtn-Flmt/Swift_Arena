@@ -11,9 +11,9 @@ import Foundation
 public class Character {
     var firstName: String
     var name: String
-    var weapon: Weapons
+    var weapon: Weapon
     var life: Int
-    init(name: String, weapon: Weapons, life: Int, firstName: String) {
+    init(name: String, weapon: Weapon, life: Int, firstName: String) {
         self.firstName = firstName
         self.name = name
         self.weapon = weapon

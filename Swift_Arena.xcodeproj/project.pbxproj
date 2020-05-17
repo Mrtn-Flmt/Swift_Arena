@@ -11,7 +11,7 @@
 		6486C8A6245A2E31000FC612 /* Sword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6486C8A5245A2E31000FC612 /* Sword.swift */; };
 		6486C8A8245A2E5B000FC612 /* Wand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6486C8A7245A2E5B000FC612 /* Wand.swift */; };
 		6486C8AA245A2E74000FC612 /* Bow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6486C8A9245A2E74000FC612 /* Bow.swift */; };
-		6486C8AC245A2E83000FC612 /* Weapons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6486C8AB245A2E83000FC612 /* Weapons.swift */; };
+		6486C8AC245A2E83000FC612 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6486C8AB245A2E83000FC612 /* Weapon.swift */; };
 		6486C8AE245A2FA9000FC612 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6486C8AD245A2FA9000FC612 /* Player.swift */; };
 		6486C8B0245A3001000FC612 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6486C8AF245A3001000FC612 /* Character.swift */; };
 		6486C8B2245A307F000FC612 /* Warrior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6486C8B1245A307F000FC612 /* Warrior.swift */; };
@@ -37,7 +37,7 @@
 		6486C8A5245A2E31000FC612 /* Sword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sword.swift; sourceTree = "<group>"; };
 		6486C8A7245A2E5B000FC612 /* Wand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wand.swift; sourceTree = "<group>"; };
 		6486C8A9245A2E74000FC612 /* Bow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bow.swift; sourceTree = "<group>"; };
-		6486C8AB245A2E83000FC612 /* Weapons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapons.swift; sourceTree = "<group>"; };
+		6486C8AB245A2E83000FC612 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		6486C8AD245A2FA9000FC612 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		6486C8AF245A3001000FC612 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		6486C8B1245A307F000FC612 /* Warrior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Warrior.swift; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 				6486C8A7245A2E5B000FC612 /* Wand.swift */,
 				6486C8A5245A2E31000FC612 /* Sword.swift */,
 				6486C8A9245A2E74000FC612 /* Bow.swift */,
-				6486C8AB245A2E83000FC612 /* Weapons.swift */,
+				6486C8AB245A2E83000FC612 /* Weapon.swift */,
 			);
 			path = Weapons;
 			sourceTree = "<group>";
@@ -172,7 +172,7 @@
 				6486C8B6245A314A000FC612 /* Archery.swift in Sources */,
 				6486C8A6245A2E31000FC612 /* Sword.swift in Sources */,
 				6486C8B2245A307F000FC612 /* Warrior.swift in Sources */,
-				6486C8AC245A2E83000FC612 /* Weapons.swift in Sources */,
+				6486C8AC245A2E83000FC612 /* Weapon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Sword: Weapons {// Ne plus init la classe
+public class Sword: Weapon {// Ne plus init la classe
     override init(name: String, hit:Int) {
         super.init(name:name,hit:hit)
     }

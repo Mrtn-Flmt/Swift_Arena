@@ -10,7 +10,7 @@ import Foundation
 
 public class Warrior: Character {
     
-    override init(name: String, weapon: Weapons, life: Int, firstName: String) {
+    override init(name: String, weapon: Weapon, life: Int, firstName: String) {
         super.init(name: name, weapon: weapon, life: life, firstName: firstName)
     }
 }
