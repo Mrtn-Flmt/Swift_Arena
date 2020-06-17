@@ -8,10 +8,15 @@
 
 import Foundation
 
-public class Sword: Weapon {// Ne plus init la classe
-    override init(name: String, hit:Int) {
-        super.init(name:name,hit:hit)
+class Sword: Weapon {
+    init() {
+        super.init(name:"Epee",hit:10)
     }
 }
 
+class SuperSword: Weapon {
+    init() {
+        super.init(name: "Super Epee of the dead", hit: 20)
+    }
+}
 

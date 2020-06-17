@@ -9,7 +9,7 @@
 import Foundation
 
 public class Wizard: Character {
-    override init(name: String, weapon: Weapon, life: Int,firstName: String) {
-        super.init(name: name, weapon: weapon, life: life,firstName: firstName)
+    init() {
+        super.init(name: "", weapon: Bow(), life: 125,firstName: "🧙‍♂️ Mage 🧙‍♂️")
     }
 }

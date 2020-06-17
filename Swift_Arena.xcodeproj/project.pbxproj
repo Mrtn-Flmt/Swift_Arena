@@ -17,6 +17,7 @@
 		6486C8B2245A307F000FC612 /* Warrior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6486C8B1245A307F000FC612 /* Warrior.swift */; };
 		6486C8B4245A30DF000FC612 /* Wizard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6486C8B3245A30DF000FC612 /* Wizard.swift */; };
 		6486C8B6245A314A000FC612 /* Archery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6486C8B5245A314A000FC612 /* Archery.swift */; };
+		6495CD9A2499897100553B9C /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6495CD992499897100553B9C /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +44,7 @@
 		6486C8B1245A307F000FC612 /* Warrior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Warrior.swift; sourceTree = "<group>"; };
 		6486C8B3245A30DF000FC612 /* Wizard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wizard.swift; sourceTree = "<group>"; };
 		6486C8B5245A314A000FC612 /* Archery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Archery.swift; sourceTree = "<group>"; };
+		6495CD992499897100553B9C /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				6486C89C245A2DDB000FC612 /* main.swift */,
 				6486C8AD245A2FA9000FC612 /* Player.swift */,
+				6495CD992499897100553B9C /* Game.swift */,
 				6486C8A4245A2E1B000FC612 /* Classes */,
 				6486C8A3245A2E18000FC612 /* Weapons */,
 			);
@@ -132,7 +135,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Martin Flament";
 				TargetAttributes = {
 					6486C898245A2DDB000FC612 = {
@@ -169,6 +172,7 @@
 				6486C8AE245A2FA9000FC612 /* Player.swift in Sources */,
 				6486C89D245A2DDB000FC612 /* main.swift in Sources */,
 				6486C8A8245A2E5B000FC612 /* Wand.swift in Sources */,
+				6495CD9A2499897100553B9C /* Game.swift in Sources */,
 				6486C8B6245A314A000FC612 /* Archery.swift in Sources */,
 				6486C8A6245A2E31000FC612 /* Sword.swift in Sources */,
 				6486C8B2245A307F000FC612 /* Warrior.swift in Sources */,
@@ -295,6 +299,7 @@
 		6486C8A1245A2DDB000FC612 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -304,6 +309,7 @@
 		6486C8A2245A2DDB000FC612 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -9,7 +9,7 @@
 import Foundation
 
 public class Archery: Character {
-    override init(name: String, weapon: Weapon, life: Int,firstName: String) {
-        super.init(name: name, weapon: weapon, life: life,firstName: firstName)
+    init() {
+        super.init(name: "", weapon: Bow(), life: 100,firstName: "Archer")
     }
 }

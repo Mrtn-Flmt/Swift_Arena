@@ -10,17 +10,13 @@ import Foundation
 
 public class Player {
     
-    var name: String
-    var team:[Character]
-    
-    init(name:String,team: [Character]) {
-        self.name = name
-        self.team = team
-    }
+    var name = ""
+    var team = [Character]()
     
     
-    public func namePlayer() {
-        print("Quel est ton prenom ?")
+    // Nommer le joueur
+    func namePlayer() {
+        print("Votre prénom :")
         if let userName = readLine() {
             self.name = userName
         }
@@ -28,24 +24,21 @@ public class Player {
     }
     
     
-    public func addCharacter() {
+    //Ajouter 3 personnages à l'équipe
+    func makeTeam() {
         while self.team.count < 3 {
-            print("Sélectionner une classe à ajouter dans votre équipe !"
-                + "\n 1 - Guerrier"
-                + "\n 2 - Mage"
-                + "\n 3 - Archer")
-            if let userChoiceCase = readLine() {
-                switch userChoiceCase {
+            if let userChoice = readLine() {
+                switch userChoice {
                 case "1":
-                    let warrior = Warrior(name: "", weapon: Sword(name: "Epe", hit: 10), life: 150, firstName: "🛡 Guerrier 🛡")
+                    let warrior = Warrior()
                     self.team.append(warrior)
                     self.nameCharacter()
                 case "2":
-                    let wizard = Wizard(name: "", weapon: Wand(name: "Baton", hit: 15), life: 125, firstName: "🧙‍♂️ Mage 🧙‍♂️")
+                    let wizard = Wizard()
                     self.team.append(wizard)
                     self.nameCharacter()
                 case "3":
-                    let archery = Archery(name: "", weapon: Bow(name: "Arc", hit: 20), life: 100, firstName: "🏹 Archer 🏹")
+                    let archery = Archery()
                     self.team.append(archery)
                     self.nameCharacter()
                 default:
@@ -61,7 +54,8 @@ public class Player {
     }
     
     
-    public func nameCharacter() {
+    // Nommer le personnage
+    func nameCharacter() {
         print("Choisissez un nom pour votre \(self.team.last!.firstName)")
         if let userClasseNameChoice = readLine() {
             self.team.last!.name = userClasseNameChoice
@@ -70,4 +64,91 @@ public class Player {
     }
     
     
+    // La team est prète
+    
+    
+    // Sélectionner le personnage qui va réaliser une action
+    func selectFighter() -> Character {
+        var characterChoosen : Character?
+        
+        while characterChoosen == nil {
+            if let userChoice = readLine() {
+                switch userChoice {
+                case "1":
+                    characterChoosen = self.team[0]
+                    selectAction(attaquant: characterChoosen!)
+                case "2":
+                    characterChoosen = self.team[1]
+                    selectAction(attaquant: characterChoosen!)
+                case "3":
+                    characterChoosen = self.team[2]
+                    selectAction(attaquant: characterChoosen!)
+                default:
+                    print("Sélectionner un personnage")
+                }
+                
+                if let character = characterChoosen, character.life <= 0 {
+                    print("Ce personnage est mort")
+                    characterChoosen = nil
+                }
+            }
+        }
+        return characterChoosen!
+    }
+    
+    
+    
+    // Sélectionner l'action à réaliser
+    func selectAction(attaquant:Character) {
+                if let choice = readLine() {
+                    switch choice {
+                    case "1":
+                        targetAttak(figther: attaquant)
+                    case "2":
+                        //targetDef
+                        targetDef(attaquant: attaquant)
+                    default:
+                        print("Je n'ai pas compris.")
+            }
+        }
+        
+    }
+    
+    
+    // Sélectionner une cible
+    func targetAttak(figther:Character) { //Peut être une insertion de l'argument "enemi"
+        
+           if let userChoice = readLine() {
+               switch userChoice {
+               case "1":
+                playerTwo.team[0].life -= figther.weapon.hit
+               case "2":
+                playerTwo.team[1].life -= figther.weapon.hit
+               case "3":
+                playerTwo.team[2].life -= figther.weapon.hit
+               default:
+                   print("Je n'ai pas compris.")
+               }
+           }
+       }
+    
+    
+    //    -    -   -   -   -
+    
+    
+    // Qui défendre
+    func targetDef(attaquant:Character) {
+        attaquant.life += attaquant.weapon.hit
+        
+    }
+    
+    
+    // Qui Soigner
+    func targetHeal(soignant:Character,soigné:Character) {
+    }
+    
+    
 }
+
+var playerOne = Player()
+var playerTwo = Player()

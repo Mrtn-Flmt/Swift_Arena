@@ -8,8 +8,15 @@
 
 import Foundation
 
-class Wand: Weapon { // Pourquoi réinitialiser et ne pas insérer directement les valeur ?
-    override init(name:String, hit: Int) {
-        super.init(name:"Baton magique",hit:15)
+class Wand: Weapon {
+    init() {
+        super.init(name:"Baton",hit:15)
+    }
+}
+
+
+class SuperWand: Weapon {
+    init() {
+        super.init(name: "Super baton of the dead", hit: 30)
     }
 }
