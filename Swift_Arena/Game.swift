@@ -18,9 +18,12 @@ class Game {
         playerTwo.namePlayer()
         playerTwo.makeTeam()
         
+        while playerOne.team[0].life >= 0 || playerOne.team[1].life >= 0 || playerOne.team[2].life >= 0 {
+            playerOne.selectFighter()
+        }
         
-        playerOne.selectFighter()
-        playerOne.selectAction(attaquant: playerOne.selectFighter())
+        
+        
     }
 
 
@@ -31,10 +34,13 @@ class Game {
         
         if randomChest1 == 1 {
             if theFighter is Warrior {
+                print("Votre guerrier vient d'obtenir une super épée !")
                 theFighter.weapon = SuperSword()
             } else if theFighter is Wizard {
+                print("Votre Mage vient d'obtenir un super baton !")
                 theFighter.weapon = SuperBow()
             } else {
+                print("Votre archer vient d'obtenir un super arc !")
                 theFighter.weapon = SuperWand()
             }
         }
