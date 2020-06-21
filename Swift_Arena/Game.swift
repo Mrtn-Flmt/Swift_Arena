@@ -19,11 +19,10 @@ class Game {
         playerTwo.makeTeam()
         
         while playerOne.team[0].life >= 0 || playerOne.team[1].life >= 0 || playerOne.team[2].life >= 0 {
+            //if playerOne.loop = true {
             playerOne.selectFighter()
+            //if playerTwo.loop = true {
         }
-        
-        
-        
     }
 
 

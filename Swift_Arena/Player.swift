@@ -115,7 +115,7 @@ public class Player {
                 if let choice = readLine() {
                     switch choice {
                     case "1":
-                        targetAttak(figther: attaquant)
+                        targetAttak(figther: <#T##Character#>, victim: <#T##Player#>)
                     case "2":
                         //targetDef
                         targetDef(attaquant: attaquant)
@@ -123,18 +123,19 @@ public class Player {
                         print("Je n'ai pas compris.")
             }
         }
-        
     }
     
     
     // Sélectionner une cible
-    func targetAttak(figther:Character) { //Peut être une insertion de l'argument "enemi"
+    func targetAttak(figther:Character, victim: Player) { //Peut être une insertion de l'argument "enemi"
         print("Cibler votre action !!")
            if let userChoice = readLine() {
                switch userChoice {
                case "1":
-                playerTwo.team[0].life -= figther.weapon.hit
+                victim.team[0].life -= figther.weapon.hit
                 print(playerTwo.team[0].life)
+                //figther.ready = false
+                
                case "2":
                 playerTwo.team[1].life -= figther.weapon.hit
                  print(playerTwo.team[1].life)
