@@ -10,4 +10,5 @@ import Foundation
 
 let game = Game()
 
+game.load()
 game.start()

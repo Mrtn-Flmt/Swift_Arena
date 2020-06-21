@@ -10,13 +10,97 @@ import Foundation
 
 class Game {
     
-    func start() {
+    // Tant que le joueur n'a pas choisi de personnage pour attaquer {
+    func selectFighter() -> Character {
+        var characterChoosen : Character?
         
+        while characterChoosen == nil {
+            print("Sélectionner le personnage qui va réaliser l'action")
+            Player.descriptionTeam()
+            if let userChoice = readLine() {
+                switch userChoice {
+                case "1":
+                    game.randomChest(for: playerOne.team[0])
+                    characterChoosen = self.team[0]
+                    print("Vous avez sélectionné \(characterChoosen!.name)")
+                    selectAction(attaquant: characterChoosen!)
+                case "2":
+                    characterChoosen = self.team[1]
+                    print("Vous avez sélectionné \(characterChoosen!.name)")
+                    selectAction(attaquant: characterChoosen!)
+                case "3":
+                    characterChoosen = self.team[2]
+                    print("Vous avez sélectionné \(characterChoosen!.name)")
+                    selectAction(attaquant: characterChoosen!)
+                default:
+                    print("Sélectionner un personnage")
+                }
+                
+                if let character = characterChoosen, character.life <= 0 {
+                    print("☠️ Ce personnage est mort... ☠️")
+                    characterChoosen = nil
+                }
+            }
+        }
+        return characterChoosen!
+    }
+    
+    // Sélectionner l'action à réaliser
+    func selectAction(attaquant:Character) {
+        print("Sélectionner l'action à réaliser !!"
+            + "\n1. Attaquer"
+            + "\n2. Se défendre"
+            + "\n3. Soigner")
+                if let choice = readLine() {
+                    switch choice {
+                    case "1":
+                        targetAttak(figther: attaquant)
+                    case "2":
+                        //targetDef
+                        targetDef(attaquant: attaquant)
+                    default:
+                        print("Je n'ai pas compris.")
+            }
+        }
+    }
+    
+    
+    // Sélectionner une cible
+    func targetAttak(figther:Character) { //Peut être une insertion de l'argument "enemi"
+        print("Cibler votre action !!"
+            + "\n1. \(playerTwo.team[0].name) le \(playerTwo.team[0].firstName)"
+            + "\n2. \(playerTwo.team[1].name) le \(playerTwo.team[1].firstName)"
+            + "\n3. \(playerTwo.team[2].name) le \(playerTwo.team[2].firstName)")
+           if let userChoice = readLine() {
+               switch userChoice {
+               case "1":
+                playerTwo.team[0].life -= figther.weapon.hit
+                print(playerTwo.team[0].life)
+                //figther.ready = false
+                
+               case "2":
+                playerTwo.team[1].life -= figther.weapon.hit
+                 print(playerTwo.team[1].life)
+               case "3":
+                playerTwo.team[2].life -= figther.weapon.hit
+                 print(playerTwo.team[2].life)
+               default:
+                   print("Je n'ai pas compris.")
+               }
+           }
+       }
+    
+    func load() {
         playerOne.namePlayer()
         playerOne.makeTeam()
         
         playerTwo.namePlayer()
         playerTwo.makeTeam()
+    }
+    
+    func start() {
+        
+        
         
         while playerOne.team[0].life >= 0 || playerOne.team[1].life >= 0 || playerOne.team[2].life >= 0 {
             //if playerOne.loop = true {
