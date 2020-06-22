@@ -16,8 +16,8 @@ class Game {
         preparePlayer(for: playerOne)
         preparePlayer(for: playerTwo)
             
-        isAlive(player: playerOne)
-        isAlive(player: playerTwo)
+        gaming(player: playerOne)
+        gaming(player: playerTwo)
     }
     
     
@@ -28,7 +28,7 @@ class Game {
        }
     
     
-    func isAlive(player:Player) {
+    func gaming(player:Player) {
         while player.team[0].life > 0 || player.team[1].life > 0 || player.team[2].life > 0  {
             gameLoop()
         }
@@ -58,7 +58,6 @@ class Game {
             if let userChoice = readLine() {
                 switch userChoice {
                 case "1":
-                    
                     characterChoosen = theSelect.team[0]
                     game.randomChest(for: characterChoosen!)
                     print("Vous avez sélectionné \(characterChoosen!.name)")
