@@ -9,31 +9,74 @@
 import Foundation
 
 class Game {
+    var characterChoosen : Character?
+    
+    
+    func start() {
+        preparePlayer(for: playerOne)
+        preparePlayer(for: playerTwo)
+            
+        isAlive(player: playerOne)
+        isAlive(player: playerTwo)
+    }
+    
+    
+    
+    func preparePlayer(for player:Player) {
+           player.namePlayer()
+           player.makeTeam()
+       }
+    
+    
+    func isAlive(player:Player) {
+        while player.team[0].life > 0 || player.team[1].life > 0 || player.team[2].life > 0  {
+            gameLoop()
+        }
+    }
+    
+    
+    func gameLoop() {
+        var isPlayerTurn = true
+        
+        if isPlayerTurn == true {
+            selectFighter(theSelect: playerOne ,oponant: playerTwo)
+            isPlayerTurn = false
+        } else {
+            selectFighter(theSelect: playerTwo, oponant: playerOne)
+            isPlayerTurn = true
+        }
+    }
+    
     
     // Tant que le joueur n'a pas choisi de personnage pour attaquer {
-    func selectFighter() -> Character {
-        var characterChoosen : Character?
+    func selectFighter(theSelect:Player,oponant:Player) -> Character {
+        
         
         while characterChoosen == nil {
             print("Sélectionner le personnage qui va réaliser l'action")
-            Player.descriptionTeam()
+            theSelect.descriptionTeam()
             if let userChoice = readLine() {
                 switch userChoice {
                 case "1":
-                    game.randomChest(for: playerOne.team[0])
-                    characterChoosen = self.team[0]
+                    
+                    characterChoosen = theSelect.team[0]
+                    game.randomChest(for: characterChoosen!)
                     print("Vous avez sélectionné \(characterChoosen!.name)")
-                    selectAction(attaquant: characterChoosen!)
+                    selectAction(attaquant: characterChoosen!,oponant: oponant)
                 case "2":
-                    characterChoosen = self.team[1]
+                    characterChoosen = theSelect.team[1]
+                    game.randomChest(for: characterChoosen!)
                     print("Vous avez sélectionné \(characterChoosen!.name)")
-                    selectAction(attaquant: characterChoosen!)
+                    selectAction(attaquant: characterChoosen!,oponant: oponant)
+                    
                 case "3":
-                    characterChoosen = self.team[2]
+                    characterChoosen = theSelect.team[2]
+                    game.randomChest(for: characterChoosen!)
                     print("Vous avez sélectionné \(characterChoosen!.name)")
-                    selectAction(attaquant: characterChoosen!)
+                    selectAction(attaquant: characterChoosen!,oponant: oponant)
                 default:
                     print("Sélectionner un personnage")
+                    
                 }
                 
                 if let character = characterChoosen, character.life <= 0 {
@@ -45,8 +88,9 @@ class Game {
         return characterChoosen!
     }
     
+    
     // Sélectionner l'action à réaliser
-    func selectAction(attaquant:Character) {
+    func selectAction(attaquant:Character,oponant:Player) {
         print("Sélectionner l'action à réaliser !!"
             + "\n1. Attaquer"
             + "\n2. Se défendre"
@@ -54,63 +98,51 @@ class Game {
                 if let choice = readLine() {
                     switch choice {
                     case "1":
-                        targetAttak(figther: attaquant)
+                        targetAttak(figther: characterChoosen!, target: oponant)
                     case "2":
                         //targetDef
-                        targetDef(attaquant: attaquant)
+                        selectAction(attaquant: characterChoosen!, oponant: oponant)
                     default:
                         print("Je n'ai pas compris.")
+                        selectAction(attaquant: characterChoosen!, oponant: oponant)
             }
         }
     }
     
     
     // Sélectionner une cible
-    func targetAttak(figther:Character) { //Peut être une insertion de l'argument "enemi"
-        print("Cibler votre action !!"
-            + "\n1. \(playerTwo.team[0].name) le \(playerTwo.team[0].firstName)"
-            + "\n2. \(playerTwo.team[1].name) le \(playerTwo.team[1].firstName)"
-            + "\n3. \(playerTwo.team[2].name) le \(playerTwo.team[2].firstName)")
+    func targetAttak(figther:Character,target:Player) {
+        print("Cibler votre attaque !"
+            + "\n1. \(target.team[0].name) le \(target.team[0].firstName)"
+            + "\n2. \(target.team[1].name) le \(target.team[1].firstName)"
+            + "\n3. \(target.team[2].name) le \(target.team[2].firstName)")
            if let userChoice = readLine() {
                switch userChoice {
                case "1":
-                playerTwo.team[0].life -= figther.weapon.hit
-                print(playerTwo.team[0].life)
-                //figther.ready = false
+                target.team[0].life -= figther.weapon.hit
+                print(target.team[0].life)
+                characterChoosen = nil
                 
                case "2":
-                playerTwo.team[1].life -= figther.weapon.hit
-                 print(playerTwo.team[1].life)
+                target.team[1].life -= figther.weapon.hit
+                 print(target.team[1].life)
+                characterChoosen = nil
                case "3":
-                playerTwo.team[2].life -= figther.weapon.hit
-                 print(playerTwo.team[2].life)
+                target.team[2].life -= figther.weapon.hit
+                 print(target.team[2].life)
+                characterChoosen = nil
                default:
                    print("Je n'ai pas compris.")
+                targetAttak(figther: characterChoosen!, target: target)
                }
+            
            }
+        
        }
     
-    func load() {
-        playerOne.namePlayer()
-        playerOne.makeTeam()
-        
-        playerTwo.namePlayer()
-        playerTwo.makeTeam()
-    }
     
-    func start() {
-        
-        
-        
-        while playerOne.team[0].life >= 0 || playerOne.team[1].life >= 0 || playerOne.team[2].life >= 0 {
-            //if playerOne.loop = true {
-            playerOne.selectFighter()
-            //if playerTwo.loop = true {
-        }
-    }
-
-
     
+   
     
     func randomChest(for theFighter:Character) {
         let randomChest1 = Int(arc4random_uniform(5))

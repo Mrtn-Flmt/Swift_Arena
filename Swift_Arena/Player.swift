@@ -8,10 +8,20 @@
 
 import Foundation
 
+
+var playerOne = Player()
+var playerTwo = Player()
+
+
+
+
+
 public class Player {
     
     var name = ""
     var team = [Character]()
+    
+    
     
     // Nommer le joueur
     func namePlayer() {
@@ -24,8 +34,13 @@ public class Player {
     
     
     func descriptionTeam() {
-        for charact in team {
-            print("\(charact.name) le \(charact.firstName)")
+        for charact in self.team {
+            print("Nom : \(charact.name)"
+                + "\nClasse : \(charact.firstName)"
+                + "\nVie : \(charact.life)"
+                + "\nArme :\(charact.weapon.name)"
+                + "\nDégat : \(charact.weapon.hit)"
+                + "\n")
         }
     }
     
@@ -34,7 +49,9 @@ public class Player {
     func makeTeam() {
         while self.team.count < 3 {
             print("Sélectionner votre classe !"
-                + "\n1. \()")
+                + "\n1. le Guerrier"
+                + "\n2. Le Mage"
+                + "\n3. L'archer")
             if let userChoice = readLine() {
                 switch userChoice {
                 case "1":
@@ -72,30 +89,4 @@ public class Player {
     }
     
     
-    // La team est prète
-    
-    
-    // Sélectionner le personnage qui va réaliser une action
-
-    
-    
-    //    -    -   -   -   -
-    
-    
-    // Qui défendre
-    func targetDef(attaquant:Character) {
-        attaquant.life += attaquant.weapon.hit
-        
-    }
-    
-    
-    // Qui Soigner
-    func targetHeal(soignant:Character,soigné:Character) {
-    }
-    
-    
 }
-
-var playerOne = Player()
-var playerTwo = Player()
-
